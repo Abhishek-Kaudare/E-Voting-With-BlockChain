@@ -1,0 +1,11 @@
+{
+  "txTimeout": 300000,
+  "skipInit": true,
+  "controllers": [
+    {
+      "name": "election-cc",
+      "version": "file:./packages/election-cc",
+      "controller": "ElectionController"
+    }
+  ]
+}
