@@ -14,10 +14,6 @@ export class Admin extends ConvectorModel<Admin> {
 
   @Required()
   @Validate(yup.string())
-  public adminId: string;
-
-  @Required()
-  @Validate(yup.string())
   public role: string;
 
   @ReadOnly()

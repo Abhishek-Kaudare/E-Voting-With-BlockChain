@@ -6,6 +6,7 @@ import {
   Required,
   Validate
 } from '@worldsibu/convector-core-model';
+import { Timestamp } from 'google-protobuf/google/protobuf/timestamp_pb';
 
 export class Election extends ConvectorModel<Election> {
   @ReadOnly()
@@ -14,14 +15,14 @@ export class Election extends ConvectorModel<Election> {
 
   @Required()
   @Validate(yup.string())
-  public election_id: string;
+  public date: string;
 
   @ReadOnly()
   @Required()
-  @Validate(yup.number())
-  public created: number;
+  @Validate(yup.string())
+  public created: string;
 
   @Required()
-  @Validate(yup.number())
-  public modified: number;
+  @Validate(yup.string())
+  public modified: string;
 }

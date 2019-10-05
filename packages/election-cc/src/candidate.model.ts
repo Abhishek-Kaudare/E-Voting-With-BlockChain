@@ -14,10 +14,6 @@ export class Candidate extends ConvectorModel<Candidate> {
 
   @Required()
   @Validate(yup.string())
-  public candidateId: string;
-
-  @Required()
-  @Validate(yup.string())
   public candidateName: string;
 
   @Required()

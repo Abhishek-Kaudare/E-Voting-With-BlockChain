@@ -14,10 +14,6 @@ export class Voting extends ConvectorModel<Voting> {
 
   @Required()
   @Validate(yup.string())
-  public electionId: string;
-
-  @Required()
-  @Validate(yup.string())
   public date: string;
 
   @ReadOnly()
