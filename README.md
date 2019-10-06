@@ -1,103 +1,90 @@
-# election - election
+# E-Voting with BlockChain 
 
-This awesome project was created automatically with <a href="https://github.com/worldsibu/convector-cli" target="_blank">Convector CLI</a>.
-By default new Convector projects locally include <a href="https://github.com/worldsibu/hurley">Hurley</a> to manage your development environment seamlessly, so you don't have to worry about setting up the network and hard ways to install  and upgrade your chaincodes.
+## Dependency
 
-## Start
+1) Python 2.7.15
+2) Node 8.16.0 and corresponding npm module
 
-```
+### NPM Modules
+
+1) @worldsibu/convector-cli
+2) @worldsibu/hurley
+3) @worldsibu/convector-rest-api
+
+
+## Installation steps
+
+### Start
+
+```bash
+#
+# Linux Installation Guide - Operate as superuser 
+su
+
+# Install dependencies 
+npm install -g @worldsibu/convector-cli
+npm install -g @worldsibu/hurley
+npm install -g @worldsibu/convector-rest-api
+
+
+# Clone the Repository
+git clone https://github.com/Abhishek-Kaudare/E-Voting-With-BlockChain.git
+
+# Migrate to the Root Folder of Repository
+cd 'path-to-root'
+
 # Install dependencies - From the root of your project
-npm i
+npm i --unsafe-perm
+
 # Create a new development blockchain network  - From the root of your project
-npm run env:restart
+npm run env:restart 
+
 # Install your smart contract
-npm run cc:start -- election
-# Make a testing call to create a record in the ledger
-# Beware that the first call may fail with a timeout! Just happens the first time
-hurl invoke election election_create "{\"name\":\"my first request\",\"id\":\"0001\",\"created\":0,\"modified\":0}"
-```
-
-## About Hurley
-
-You may as well install **Hurley** globally for easier and more flexible management. 
-
-`npm i -g @worldsibu/hurley`
-
-Since with Hurley globally you have control over everything, some things that you can do, for example, is installing a Convector Smart Contract with a different name than the one you used for your project.
+npm run cc:start election
 
 ```
-# Use the same package
-# Install a new chaincode with the same source code but the name 'anothernameforyourcc'
-hurl install anothernameforyourcc node
+
+## About Hurley (Invoking Only For More Details Go To The Main Repository Link Below)
+You don't to be in any specific folder path, you just need the name of the chaincode.
+```bash
+hurl invoke election election_createVoter {"voter": {"id": "1","voterName": "a", "votingPhase": "string1", "votingStatus": "string2", "votingPermission": "string3", "validationStatus": "string4", "validationOfficer": "string5", "created": "string6", "modified": "string7"}}
+# Command.: hurl invoke <ChaincodeName> <Chaincode_FunctionName> <Params>
 ```
 
-Other complex tasks you may need is installing to a different channel.
+### Running the Server
 
-```
-# Use the same package
-# Be sure you started your environment with more than one channel running 'hurl new --channels 2'. Otherwise this will throw an error.
-hurl install anothernameforyourcc node --channel ch2
-```
+```bash
 
----
+# Inside your Convector CLI generated project's root
 
-If you don't want to, don't worries! This project works right away.
+conv-rest-api generate api -c election -f election.config.json
+# Command.: conv-rest-api generate api -c <chaincode-project-name> -f ./<chaincode-config-file>
 
-## Start - if you have Hurley globally
+# Compile everything - May Not Need This Try If Next step didn't work
+npx lerna bootstrap
 
-### Bring your project to life 
-
-```
-# Install dependencies - From the root of your project
-npm i
-# Create a new development blockchain network  - From the root of your project
-hurl new
+# Start the server
+npx lerna run start --scope server --stream
 ```
 
-###  Install and upgrade chaincodes
 
-```
-# Package your smart contract's code  - From the root of your project
-npm run cc:package -- election org1
-# Install to your blockchain - From the root of your project
-hurl install election node -P ./chaincode-election
-# Install in debug mode, this will run the chaincode server locally so you can debug
-hurl install election node -P ./chaincode-election --debug
 
-# Upgrade your existing chaincode - From the root of your project
-hurl upgrade election node 1.2 -P ./chaincode-election
-```
+## Important Links
 
-## Start - if you don't have Hurley globally
+### Convector
+https://github.com/worldsibu/convector
+### Convector Cli
 
-### Bring your project to life 
+https://github.com/worldsibu/convector-cli
+### Hurley
 
-```
-# Install dependencies - From the root of your project
-npm i
-# Create a new development blockchain network  - From the root of your project
-npm run env:restart
-```
+https://github.com/worldsibu/hurley
 
-###  Install and upgrade chaincodes
+### Convector Rest Api Generator
+https://github.com/worldsibu/convector-rest-api
 
-```
-# Install to your blockchain - From the root of your project
-npm run cc:start -- election
 
-# Upgrade your existing chaincode - From the root of your project
-npm run cc:upgrade -- election 1.2
-```
 
-## Tests
+## Contributions
 
-```
-npm run test
-```
-
-> Check all the information to work with Convector <a href="https://docs.covalentx.com/convector" target="_blank">in the DOCS site</a>.
-
-## Collaborate to the Convector Suite projects
-
-* <a href="https://community.covalentx.com" target="_blank">Discord chat with the community</a>
-* <a href="https://github.com/worldsibu" target="_blank">Convector projects</a>
+Special thanks to Triads for starting this amazingly useful project for the community.
