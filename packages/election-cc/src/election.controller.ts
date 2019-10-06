@@ -62,6 +62,7 @@ export class ElectionController extends ConvectorController<ChaincodeTx> {
     await voting.save();
   }
 
+  @Invokable()
   public async changeVotingStatus(
     @Param(yup.string())
     voterId: string,
@@ -74,6 +75,7 @@ export class ElectionController extends ConvectorController<ChaincodeTx> {
     await voter.save();
   }
 
+  @Invokable()
   public async changeVotingPhase(
     @Param(yup.string())
     voterId: string,
@@ -86,6 +88,7 @@ export class ElectionController extends ConvectorController<ChaincodeTx> {
     await voter.save();
   }
 
+  @Invokable()
   public async changeVotingPermission(
     @Param(yup.string())
     voterId: string,
@@ -98,6 +101,7 @@ export class ElectionController extends ConvectorController<ChaincodeTx> {
     await voter.save();
   }
 
+  @Invokable()
   public async changeVoterValidationStatus(
     @Param(yup.string())
     voterId: string,
@@ -113,12 +117,23 @@ export class ElectionController extends ConvectorController<ChaincodeTx> {
     await voter.save();
   }
 
+  @Invokable()
   public async getAllVoters() {
     const allVoters = await Voter.getAll<Voter>();
     return allVoters;
     // Think of way to return voters according to VoterPhase
   }
 
+  @Invokable()
+  public async getVoterByID(
+    @Param(yup.string())
+    voterId: string
+  ) {
+    const voter = await Voter.getOne(voterId);
+    return voter;
+  }
+
+  @Invokable()
   public async changeCandidaturePhase(
     @Param(yup.string())
     candidateId: string,
@@ -131,6 +146,7 @@ export class ElectionController extends ConvectorController<ChaincodeTx> {
     await candidate.save();
   }
 
+  @Invokable()
   public async changeCandidateValidationStatus(
     @Param(yup.string())
     candidateId: string,
@@ -146,10 +162,21 @@ export class ElectionController extends ConvectorController<ChaincodeTx> {
     await candidate.save();
   }
 
+  @Invokable()
   public async getAllCandidates() {
     const allCandidates = await Candidate.getAll<Candidate>();
     return allCandidates;
     // Think of way to return candidates according to CandidaturePhase
   }
+
+  @Invokable()
+  public async getCandidateByID(
+    @Param(yup.string())
+    candidateId: string
+  ) {
+    const candidate = await Candidate.getOne(candidateId);
+    return candidate;
+  }
+
   // Think of way to introduce winner
 }

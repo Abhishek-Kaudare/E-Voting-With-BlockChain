@@ -1,0 +1,77 @@
+[
+  {
+    "function": "createAdmin",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "createVoter",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "createCandidate",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "createElection",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "addVoting",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "changeVotingStatus",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "changeVotingPhase",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "changeVotingPermission",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "changeVoterValidationStatus",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "getAllVoters",
+    "verb": "get",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "getVoterByID",
+    "verb": "get",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "changeCandidaturePhase",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "changeCandidateValidationStatus",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "getAllCandidates",
+    "verb": "get",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "getCandidateByID",
+    "verb": "get",
+    "controller": "ElectionController"
+  }
+]
