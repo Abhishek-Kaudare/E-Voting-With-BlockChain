@@ -60,6 +60,11 @@
     "controller": "ElectionController"
   },
   {
+    "function": "changeCandidatureStatus",
+    "verb": "post",
+    "controller": "ElectionController"
+  },
+  {
     "function": "changeCandidateValidationStatus",
     "verb": "post",
     "controller": "ElectionController"
@@ -71,6 +76,31 @@
   },
   {
     "function": "getCandidateByID",
+    "verb": "get",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "getAllAdmins",
+    "verb": "get",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "getAllVotings",
+    "verb": "get",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "getAllElections",
+    "verb": "get",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "getAdminByID",
+    "verb": "get",
+    "controller": "ElectionController"
+  },
+  {
+    "function": "getElectionByID",
     "verb": "get",
     "controller": "ElectionController"
   }

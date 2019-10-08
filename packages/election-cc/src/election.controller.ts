@@ -147,6 +147,19 @@ export class ElectionController extends ConvectorController<ChaincodeTx> {
   }
 
   @Invokable()
+  public async changeCandidatureStatus(
+    @Param(yup.string())
+    candidateId: string,
+    @Param(yup.string())
+    candidatureStatus: string
+  ) {
+    const candidate = await Candidate.getOne(candidateId);
+    candidate.candidatureStatus = candidatureStatus;
+    // Think of how to add validating officer role at every phase
+    await candidate.save();
+  }
+
+  @Invokable()
   public async changeCandidateValidationStatus(
     @Param(yup.string())
     candidateId: string,
@@ -178,5 +191,40 @@ export class ElectionController extends ConvectorController<ChaincodeTx> {
     return candidate;
   }
 
+  @Invokable()
+  public async getAllAdmins() {
+    const allAdmin = await Admin.getAll<Admin>();
+    return allAdmin;
+  }
+
+  @Invokable()
+  public async getAdminByID(
+    @Param(yup.string())
+    adminId: string
+  ) {
+    const admin = await Admin.getOne(adminId);
+    return admin;
+  }
+
+  @Invokable()
+  public async getAllVotings() {
+    const allVoting = await Voting.getAll<Voting>();
+    return allVoting;
+  }
+
+  @Invokable()
+  public async getAllElections() {
+    const allElection = await Election.getAll<Election>();
+    return allElection;
+  }
+
+  @Invokable()
+  public async getElectionByID(
+    @Param(yup.string())
+    electionId: string
+  ) {
+    const election = await Election.getOne(electionId);
+    return election;
+  }
   // Think of way to introduce winner
 }

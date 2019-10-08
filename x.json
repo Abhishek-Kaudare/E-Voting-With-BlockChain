@@ -1,0 +1,121 @@
+{"admin":{
+  "id": "ID",
+  "role": "Role - Validator, Election_Officer, Booth_Officer",
+  "created": "Send a Timestamp As String",
+  "modified": "Send a Timestamp As String"
+}
+}
+
+// getAdminByID
+{
+  "adminId": "adminId"
+}
+
+{"voter":{
+  "id": "ID",
+  "voterName": "Name",
+  "votingPhase": "Next Election To Be Voting/ ### - If No Election Announced",
+  "votingStatus": "0-Voted/1-To-Be-Voting/3-Uneligible",
+  "votingPermission": "0-After Election is announced/1-On Election Day",
+  "validationStatus": "0-Not validated/1-Validated",
+  "validationOfficer": "Validating Officer ID",
+  "created": "Send a Timestamp As String",
+  "modified": "Send a Timestamp As String"
+}
+}
+
+// changeVotingStatus
+{
+  "voterId": "voterId",
+  "votingStatus":"0/1/3"
+}
+
+// changeVotingPhase
+{
+  "voterId": "voterId",
+  "votingPhase":"Next Election To Be Voting/ ### - If No Election Announced"
+}
+
+// changeVotingPermission
+{
+  "voterId": "voterId",
+  "votingPermission":"0-After Election is announced/1-On Election Day"
+}
+
+// changeVoterValidationStatus
+{
+  "voterId": "voterId",
+  "validationStatus":"0-Not validated/1-Validated",
+  "validationOfficer":"Validating Officer ID"
+}
+
+// getVoterByID
+{
+  "voterId": "voterId"
+}
+
+{"candidate":{
+  "id": "ID",
+  "candidateName": "Name",
+  "candidaturePhase": "Participating Election Id",
+  "candidatureStatus": "Last Standing Postion/ 0 - Before Election",
+  "totalVotes": 000,
+  "validationStatus": "0-Not validated/1-Validated",
+  "validationOfficer": "Validating Officer ID",
+  "created": "Send a Timestamp As String",
+  "modified": "Send a Timestamp As String"
+}
+}
+
+// changeCandidaturePhase
+{
+  "candidateId": "candidateId",
+  "candidaturePhase": "Participating Election Id"
+}
+
+// changeCandidatureStatus - Call After election is finished after counting of votes
+{
+  "candidateId": "candidateId",
+  "candidatureStatus": "1/2/3/4/......"
+}
+
+// changeCandidateValidationStatus
+{
+  "candidateId": "candidateId",
+  "validationStatus":"0-Not validated/1-Validated",
+  "validationOfficer":"Validating Officer ID"
+}
+
+// getCandidateByID
+{
+  "candidateId": "candidateId"
+}
+
+
+{
+  "election":{
+    "id": "ID",
+    "date": "Send Election Date as a String",
+    "created": "Send a Timestamp As String",
+    "modified": "Send a Timestamp As String"
+  }
+}
+
+// getElectionByID
+{
+  "electionId": "electionId"
+}
+
+
+// addVoting
+{
+  "voting":{
+    "id": "Unique Identifier - Timestamp+RandomDigit+VoterId",
+    "election": "ElectionId",
+    "created": "Send a Timestamp As String",
+    "modified": "Send a Timestamp As String"
+  },
+  "candidateId":"candidateId"
+}
+
+

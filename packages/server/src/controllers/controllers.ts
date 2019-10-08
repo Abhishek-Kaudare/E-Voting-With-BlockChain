@@ -134,6 +134,17 @@ export async function ElectionController_changeCandidaturePhase_post(req: Reques
         res.status(500).send(ex);
     }
 }
+export async function ElectionController_changeCandidatureStatus_post(req: Request, res: Response): Promise<void>{
+    try{
+        let params = req.body;
+            res.status(200).send(await ElectionControllerBackEnd
+                .changeCandidatureStatus(params.candidateId,params.candidatureStatus));
+            
+    } catch(ex) {
+        console.log('Error post ElectionController_changeCandidatureStatus', ex.stack);
+        res.status(500).send(ex);
+    }
+}
 export async function ElectionController_changeCandidateValidationStatus_post(req: Request, res: Response): Promise<void>{
     try{
         let params = req.body;
@@ -164,6 +175,61 @@ export async function ElectionController_getCandidateByID_get(req: Request, res:
         
     } catch(ex) {
         console.log('Error get ElectionController_getCandidateByID', ex.stack);
+        res.status(500).send(ex);
+    }
+}
+export async function ElectionController_getAllAdmins_get(req: Request, res: Response): Promise<void>{
+    try{
+        let params = req.params;
+        res.status(200).send(await ElectionControllerBackEnd
+            .getAllAdmins());
+        
+    } catch(ex) {
+        console.log('Error get ElectionController_getAllAdmins', ex.stack);
+        res.status(500).send(ex);
+    }
+}
+export async function ElectionController_getAllVotings_get(req: Request, res: Response): Promise<void>{
+    try{
+        let params = req.params;
+        res.status(200).send(await ElectionControllerBackEnd
+            .getAllVotings());
+        
+    } catch(ex) {
+        console.log('Error get ElectionController_getAllVotings', ex.stack);
+        res.status(500).send(ex);
+    }
+}
+export async function ElectionController_getAllElections_get(req: Request, res: Response): Promise<void>{
+    try{
+        let params = req.params;
+        res.status(200).send(await ElectionControllerBackEnd
+            .getAllElections());
+        
+    } catch(ex) {
+        console.log('Error get ElectionController_getAllElections', ex.stack);
+        res.status(500).send(ex);
+    }
+}
+export async function ElectionController_getAdminByID_get(req: Request, res: Response): Promise<void>{
+    try{
+        let params = req.params;
+        res.status(200).send(await ElectionControllerBackEnd
+            .getAdminByID(params.adminId));
+        
+    } catch(ex) {
+        console.log('Error get ElectionController_getAdminByID', ex.stack);
+        res.status(500).send(ex);
+    }
+}
+export async function ElectionController_getElectionByID_get(req: Request, res: Response): Promise<void>{
+    try{
+        let params = req.params;
+        res.status(200).send(await ElectionControllerBackEnd
+            .getElectionByID(params.electionId));
+        
+    } catch(ex) {
+        console.log('Error get ElectionController_getElectionByID', ex.stack);
         res.status(500).send(ex);
     }
 }
