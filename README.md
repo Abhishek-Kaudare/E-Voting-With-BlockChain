@@ -87,7 +87,7 @@ https://github.com/worldsibu/hurley
 https://github.com/worldsibu/convector-rest-api
 
 # Instruction to Call Rest Api
-
+Design the Web Application to invoke following endpoints for the below mentioned Models
 ## Admin
 
 ### createAdmin
@@ -395,8 +395,7 @@ http://localhost:8000/election/getAllVotings
 ## Notes
 
 For any doubt in routes refer following link:
-https://github.com/Abhishek-Kaudare/E-Voting-With-BlockChain/blob/e9527898258b1ca31da97297de854dcbf1da6d79/packages/server/src/controllers/router.ts
-
+https://github.com/Abhishek-Kaudare/E-Voting-With-BlockChain/blob/master/packages/server/src/controllers/router.ts
 # Contributions
 
 Special thanks to Triads for starting this amazingly useful project for the community.
