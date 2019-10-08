@@ -150,7 +150,6 @@ Data To Be Send
     "votingStatus": "0-Voted/1-To-Be-Voting/3-Uneligible",
     "votingPermission": "0-After Election is announced/1-On Election Day",
     "validationStatus": "0-Not validated/1-Validated",
-    "validationOfficer": "Validating Officer ID",
     "created": "Send a Timestamp As String",
     "modified": "Send a Timestamp As String"
   }
@@ -256,7 +255,6 @@ Data To Be Send
     "candidatureStatus": "Last Standing Postion/ 0 - Before Election",
     "totalVotes": 000,
     "validationStatus": "0-Not validated/1-Validated",
-    "validationOfficer": "Validating Officer ID",
     "created": "Send a Timestamp As String",
     "modified": "Send a Timestamp As String"
   }
