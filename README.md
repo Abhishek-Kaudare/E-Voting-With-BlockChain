@@ -3,7 +3,7 @@
 ## Dependency
 
 1. Python 2.7.15
-2. Node 8.16.0 and corresponding npm module
+2. Node 8.16.0 and preceeding npm module
 
 ### NPM Modules
 
