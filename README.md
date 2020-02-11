@@ -48,7 +48,7 @@ npm run cc:start election
 You don't to be in any specific folder path, you just need the name of the chaincode.
 
 ```bash
-hurl invoke election election_createVoter {"id": "1","voterName": "a", "votingPhase": "string1", "votingStatus": "string2", "votingPermission": "string3", "validationStatus": "string4", "validationOfficer": "string5", "created": "string6", "modified": "string7"}
+hurl invoke election election_createVoter '{"id":"1","voterName":"a","votingPhase":"string1","votingStatus":"string2","votingPermission":"string3","validationStatus":"string4","validationOfficer":"string5","created":"string6","modified":"string7"}'
 # Command.: hurl invoke <ChaincodeName> <Chaincode_FunctionName> <Params>
 ```
 
