@@ -376,8 +376,8 @@ Data To Be Send
   "voting": {
     "id": "Unique Identifier - Timestamp+RandomDigit+VoterId",
     "election": "ElectionId",
-    "created": "Send a Timestamp As String",
-    "modified": "Send a Timestamp As String"
+    "candidate": "candidateId",
+    "created": "Send a Timestamp As String"
   },
   "candidateId": "candidateId"
 }
