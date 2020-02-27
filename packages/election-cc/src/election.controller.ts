@@ -60,6 +60,7 @@ export class ElectionController extends ConvectorController<ChaincodeTx> {
 
     await candidate.save();
     await voting.save();
+    return voting;
   }
 
   @Invokable()
