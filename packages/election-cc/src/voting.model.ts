@@ -12,16 +12,19 @@ export class Voting extends ConvectorModel<Voting> {
   @Required()
   public readonly type = 'io.worldsibu.voting';
 
+  @ReadOnly()
   @Required()
   @Validate(yup.string())
   public election: string;
-
+  
+  @ReadOnly()
+  @Required()
+  @Validate(yup.string())
+  public candidate: string;
+  
   @ReadOnly()
   @Required()
   @Validate(yup.number())
   public created: number;
 
-  @Required()
-  @Validate(yup.number())
-  public modified: number;
 }
